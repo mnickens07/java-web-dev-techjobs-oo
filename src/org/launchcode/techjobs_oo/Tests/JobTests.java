@@ -8,37 +8,37 @@ import static org.junit.Assert.*;
 
 
 public class JobTests {
-    Job test_job;
-    Job getTest_job;
+    Job job1;
+    Job job2;
 
     @Before
     public void createJobObject() {
-        test_job = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        getTest_job = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        this.job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        this.job2 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
     }
 
     @Test
     public void testSettingJobId(){
-        assertEquals(7,test_job.getId());
-        assertEquals(8,getTest_job.getId());
+        assertEquals(1,job1.getId());
+        assertEquals(2,job2.getId());
     }
 
     @Test
     public void testJobConstructorSetsAllFields(){
-        assert(test_job.getEmployer() instanceof Employer
-                && test_job.getLocation() instanceof Location
-                && test_job.getPositionType() instanceof PositionType
-                && test_job.getCoreCompetency() instanceof CoreCompetency);
+        assert(job1.getEmployer() instanceof Employer
+                && job1.getLocation() instanceof Location
+                && job1.getPositionType() instanceof PositionType
+                && job1.getCoreCompetency() instanceof CoreCompetency);
     }
 
     @Test
     public void testJobsForEquality(){
-        assertFalse(test_job.equals(getTest_job));
+        assertFalse(job1.equals(job2));
     }
 
     @Test
     public void testJobsForString(){
-        assertTrue(test_job.toString(" "));
+        assertEquals( 1,job1.toString());
 
     }
 

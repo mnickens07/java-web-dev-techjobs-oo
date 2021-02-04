@@ -31,7 +31,23 @@ public class Job {
     }
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Job job = (Job) o;
+        return id == job.id
+                && name.equals(job.name)
+                && employer.equals(job.employer)
+                && location.equals(job.location)
+                && positionType.equals(job.positionType)
+                && coreCompetency.equals(job.coreCompetency);
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, employer, location, positionType, coreCompetency);
+    }
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
 
@@ -79,26 +95,15 @@ public class Job {
         return id;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Job job = (Job) o;
-        return id == job.id
-                && name.equals(job.name)
-                && employer.equals(job.employer)
-                && location.equals(job.location)
-                && positionType.equals(job.positionType)
-                && coreCompetency.equals(job.coreCompetency);
+    public String toString(Job j) {
+//        if (s.contains("")) {
+//
+//        }
+        Job job = new Job();
+        return  "\n" + job + "\n";
+
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, employer, location, positionType, coreCompetency);
-    }
 
-    public boolean toString(String s) {
 
-        return true;
-    }
 }
