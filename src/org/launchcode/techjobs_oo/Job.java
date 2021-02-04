@@ -96,4 +96,9 @@ public class Job {
     public int hashCode() {
         return Objects.hash(id, name, employer, location, positionType, coreCompetency);
     }
+
+    public boolean toString(String s) {
+
+        return true;
+    }
 }
