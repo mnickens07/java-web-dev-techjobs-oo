@@ -1,5 +1,8 @@
-package org.launchcode.techjobs_oo;
+package org.launchcode.techjobs_oo.main;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 public class Job {
@@ -29,6 +32,8 @@ public class Job {
         this.coreCompetency=coreCompetency;
 
     }
+
+
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
     @Override
@@ -95,15 +100,39 @@ public class Job {
         return id;
     }
 
-    public String toString(Job j) {
-//        if (s.contains("")) {
-//
-//        }
-        Job job = new Job();
-        return  "\n" + job + "\n";
+    @Override
+    public String toString() {
+        //ID:  _______
+//Name: _______
+//Employer: _______
+//Location: _______
+//Position Type: _______
+//Core Competency: _______
+        ArrayList<HashMap<Class, String>> jobs = new ArrayList<>();
+        for(HashMap job: jobs){
+            for (Object entry : job.entrySet()){
 
+            if(entry.getClass().toString().contains("")
+                    ||getEmployer().toString().contains("")
+                    ||getLocation().toString().contains("")
+                    ||getPositionType().toString().contains("")
+                    ||getCoreCompetency().toString().contains("")) {
+                return "\n" + "ID: " + getId() + "\n" +
+                        "Name: Data not available\n" +
+                        "Employer: " + getEmployer() + "\n" +
+                        "Location: " + getLocation() + "\n" +
+                        "Position Type: " + getPositionType() + "\n" +
+                        "Core Competency: " + getCoreCompetency() + "\n";
+            }
+            }
+        }
+
+
+        return  "\n"+"ID: "+ getId() + "\n"+
+                "Name: "+ getName() + "\n"+
+                "Employer: "+getEmployer() +"\n"+
+                "Location: "+getLocation() +"\n"+
+                "Position Type: "+getPositionType() +"\n"+
+                "Core Competency: "+getCoreCompetency()+"\n";
     }
-
-
-
 }
