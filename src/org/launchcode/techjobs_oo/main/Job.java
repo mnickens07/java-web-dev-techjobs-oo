@@ -102,37 +102,13 @@ public class Job {
 
     @Override
     public String toString() {
-        //ID:  _______
-//Name: _______
-//Employer: _______
-//Location: _______
-//Position Type: _______
-//Core Competency: _______
-        ArrayList<HashMap<Class, String>> jobs = new ArrayList<>();
-        for(HashMap job: jobs){
-            for (Object entry : job.entrySet()){
+         return
+                    "\n" + "ID: " + getId() + "\n" +
+                    "Name: " + ((name.isEmpty()) ? "Data not available": getName())+ "\n"+
+                    "Employer: "+((employer.getValue().isEmpty()) ? "Data not available": employer.getValue())+"\n"+
+                    "Location: "+((location.getValue().isEmpty()) ? "Data not available": location.getValue())+"\n"+
+                    "Position Type: "+((positionType.getValue().isEmpty()) ? "Data not available": positionType.getValue())+"\n"+
+                    "Core Competency: "+((coreCompetency.getValue().isEmpty()) ? "Data not available": coreCompetency.getValue())+"\n";
 
-            if(entry.getClass().toString().contains("")
-                    ||getEmployer().toString().contains("")
-                    ||getLocation().toString().contains("")
-                    ||getPositionType().toString().contains("")
-                    ||getCoreCompetency().toString().contains("")) {
-                return "\n" + "ID: " + getId() + "\n" +
-                        "Name: Data not available\n" +
-                        "Employer: " + getEmployer() + "\n" +
-                        "Location: " + getLocation() + "\n" +
-                        "Position Type: " + getPositionType() + "\n" +
-                        "Core Competency: " + getCoreCompetency() + "\n";
-            }
-            }
-        }
-
-
-        return  "\n"+"ID: "+ getId() + "\n"+
-                "Name: "+ getName() + "\n"+
-                "Employer: "+getEmployer() +"\n"+
-                "Location: "+getLocation() +"\n"+
-                "Position Type: "+getPositionType() +"\n"+
-                "Core Competency: "+getCoreCompetency()+"\n";
     }
 }

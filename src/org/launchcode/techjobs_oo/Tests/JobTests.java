@@ -41,14 +41,7 @@ public class JobTests {
 
     @Test
     public void testJobsForString(){
-//        ID:  _______
-//        Name: _______
-//        Employer: _______
-//        Location: _______
-//        Position Type: _______
-//        Core Competency: _______
-//                this.job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        assertEquals( "\nID: 4\n" +
+        assertEquals( "\nID: " + job1.getId()+"\n" +
                 "Name: Product tester\n" +
                 "Employer: ACME\n" +
                 "Location: Desert\n" +
